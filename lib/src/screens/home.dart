@@ -23,7 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("BandNames", style: TextStyle(color: Colors.black87)),
+          title:
+              const Text("BandNames", style: TextStyle(color: Colors.black87)),
           backgroundColor: Colors.white,
           elevation: 1,
         ),
@@ -32,7 +33,11 @@ class _HomeScreenState extends State<HomeScreen> {
             itemBuilder: (BuildContext context, int index) =>
                 _bandTile(bands[index])),
         floatingActionButton: FloatingActionButton(
-            child: Icon(Icons.add), elevation: 1, onPressed: addNewBand));
+            child: const Icon(
+              Icons.add,
+            ),
+            elevation: 1,
+            onPressed: addNewBand));
   }
 
   Widget _bandTile(Band band) {
@@ -43,9 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
         //TODO llamar borrado ne server
       },
       background: Container(
-          padding: EdgeInsets.only(left: 8),
+          padding: const EdgeInsets.only(left: 8),
           color: Colors.red,
-          child: Align(
+          child: const Align(
               alignment: Alignment.centerLeft,
               child:
                   Text("Delete band", style: TextStyle(color: Colors.white)))),
@@ -55,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
           backgroundColor: Colors.blue[100],
         ),
         title: Text(band.name!),
-        trailing: Text("${band.votes}", style: TextStyle(fontSize: 20)),
+        trailing: Text("${band.votes}", style: const TextStyle(fontSize: 20)),
         onTap: () {
           print(band.name);
         },
@@ -70,13 +75,13 @@ class _HomeScreenState extends State<HomeScreen> {
       return showDialog(
           context: context,
           builder: (context) => AlertDialog(
-                  title: Text("New Band Name"),
+                  title: const Text("New Band Name"),
                   content: TextField(
                     controller: textEditingController,
                   ),
                   actions: [
                     MaterialButton(
-                        child: Text("Add"),
+                        child: const Text("Add"),
                         elevation: 5,
                         textColor: Colors.blue,
                         onPressed: () =>
@@ -86,17 +91,17 @@ class _HomeScreenState extends State<HomeScreen> {
     showCupertinoDialog(
         context: context,
         builder: (context) => CupertinoAlertDialog(
-                title: Text("New Band Name"),
+                title: const Text("New Band Name"),
                 content: CupertinoTextField(controller: textEditingController),
                 actions: [
                   CupertinoDialogAction(
                       isDefaultAction: true,
-                      child: Text("Add"),
+                      child: const Text("Add"),
                       onPressed: () =>
                           addBandToList(textEditingController.text)),
                   CupertinoDialogAction(
                       isDestructiveAction: true,
-                      child: Text("Dismiss"),
+                      child: const Text("Dismiss"),
                       onPressed: () => Navigator.pop(context))
                 ]));
   }
