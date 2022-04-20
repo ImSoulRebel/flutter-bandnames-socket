@@ -16,6 +16,16 @@ class StatusScreen extends StatelessWidget {
           children: [Text("ServerStatus: ${socketService.serverStatus}")],
         ),
       ),
+
+      ///* Mensaje a servidor por comunicación por sockets
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.message),
+        onPressed: () {
+          // *emitir: nuevo-mensaje
+          socketService.socket?.emit('nuevo-mensaje',
+              {'nombre': 'Flutter', 'mensaje': 'Hola desde Flutter'});
+        },
+      ),
     );
   }
 }
