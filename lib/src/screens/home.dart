@@ -167,7 +167,7 @@ class _HomeScreenState extends State<HomeScreen> {
           initialAngleInDegree: 0,
           chartType: ChartType.ring,
           ringStrokeWidth: 20,
-          centerText: "Bands",
+          centerText: "",
           legendOptions: const LegendOptions(
             showLegendsInRow: false,
             legendPosition: LegendPosition.right,
@@ -180,9 +180,9 @@ class _HomeScreenState extends State<HomeScreen> {
           chartValuesOptions: const ChartValuesOptions(
             showChartValueBackground: true,
             showChartValues: true,
-            showChartValuesInPercentage: false,
+            showChartValuesInPercentage: true,
             showChartValuesOutside: false,
-            decimalPlaces: 1,
+            decimalPlaces: 0,
           ),
           // gradientList: ---To add gradient colors---
           // emptyColorGradient: ---Empty Color gradient---

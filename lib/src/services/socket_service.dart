@@ -22,10 +22,11 @@ class SocketService with ChangeNotifier {
   void _initConfig() {
     // *Dart Client
     _socket = io(
-        //*Alternativas, puede variar de IOS a Android
+        'https://nani-flutter-socket-server.herokuapp.com/',
+        //*Alternativas en localhost, puede variar de IOS a Android
         // 'http://localhost:3000',
         // 'http://10.0.2.2:3000',
-        'http://192.168.1.33:3000',
+        // 'http://192.168.1.33:3000',
         OptionBuilder()
             .setTransports(['websocket']) // *for Flutter or Dart VM
             .enableAutoConnect() // *enable auto-connection
